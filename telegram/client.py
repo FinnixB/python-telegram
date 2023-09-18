@@ -143,7 +143,7 @@ class Telegram:
 
         self._results: Dict[str, AsyncResult] = {}
         self._update_handlers: DefaultDict[str, List[Callable]] = defaultdict(list)
-        self._handlers: DefaultDict[str, List[Callable]] = defaultdict(list)
+        self._handlers: List[Callable] = []
 
         self._tdjson = TDJson(library_path=library_path, verbosity=tdlib_verbosity)
         self._run()
